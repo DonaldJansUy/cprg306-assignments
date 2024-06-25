@@ -82,21 +82,15 @@ export default function ItemList() {
 
   return (
     <div>
-      <div>
+      <div className=" flex justify-center space-x-4">
+        <p>sortBy: </p>
         <button
-          onClick={() => setSortBy("name")}
-          style={{ backgroundColor: sortBy === "name" ? "blue" : "white" }}
-        >
-          Sort by Name
-        </button>
+          onClick={() => setSortBy("name")} className=" w-40 " style={{ backgroundColor: sortBy === "name" ? "blue" : "white" }}>Name</button>
         <button
-          onClick={() => setSortBy("category")}
-          style={{ backgroundColor: sortBy === "category" ? "blue" : "white" }}
-        >
-          Sort by Category
+          onClick={() => setSortBy("category")} className=" w-40"style={{ backgroundColor: sortBy === "category" ? "blue" : "white" }}>Category
         </button>
       </div>
-      <div>
+      <div className="space-y-8">
         {sortedItems.map(item => (
           <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category} />
         ))}
